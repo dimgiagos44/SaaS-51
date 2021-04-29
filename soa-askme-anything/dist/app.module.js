@@ -14,6 +14,9 @@ const user_module_1 = require("./user/user.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const auth_module_1 = require("./auth/auth.module");
 const config_1 = require("@nestjs/config");
+const question_module_1 = require("./question/question.module");
+const answer_module_1 = require("./answer/answer.module");
+const keyword_module_1 = require("./keyword/keyword.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -23,6 +26,9 @@ AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRoot(),
             auth_module_1.AuthModule,
             config_1.ConfigModule.forRoot(),
+            question_module_1.QuestionModule,
+            answer_module_1.AnswerModule,
+            keyword_module_1.KeywordModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

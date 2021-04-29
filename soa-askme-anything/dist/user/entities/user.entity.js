@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
+const question_entity_1 = require("../../question/entities/question.entity");
+const answer_entity_1 = require("../../answer/entities/answer.entity");
 let User = class User {
     async hashPassword() {
         this.password = await bcrypt.hash(this.password, 10);
@@ -47,6 +49,14 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], User.prototype, "hashPassword", null);
+__decorate([
+    typeorm_1.OneToMany(() => question_entity_1.Question, (question) => question.user),
+    __metadata("design:type", Array)
+], User.prototype, "questions", void 0);
+__decorate([
+    typeorm_1.OneToMany(() => answer_entity_1.Answer, (answer) => answer.user),
+    __metadata("design:type", Array)
+], User.prototype, "answers", void 0);
 User = __decorate([
     typeorm_1.Entity()
 ], User);

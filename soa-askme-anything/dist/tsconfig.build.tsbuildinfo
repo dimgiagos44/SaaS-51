@@ -2936,9 +2936,24 @@
         "signature": "6c407a8b6e5cabde0c5e4ad2d1d0e18c4de012983e9a006fc5e3e121545552f1",
         "affectsGlobalScope": false
       },
+      "../src/answer/entities/answer.entity.ts": {
+        "version": "e8e398771fdebbc0475f56a3db0421af044c175b50a37cd4bd55fa6c1afd3580",
+        "signature": "e51df2ada81018f644f2919be2aba8bce81e589e27eb173705d8f1786a120547",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/entities/keyword.entity.ts": {
+        "version": "39a9364597aa755d353cc31f45da71020376a6cc934b9a328cbdd105c91ea74d",
+        "signature": "f3799bc88615a6eb2be15443b6fee771d9073d123cc5d1fd5d6ca559d5493072",
+        "affectsGlobalScope": false
+      },
+      "../src/question/entities/question.entity.ts": {
+        "version": "65f5ec808bf36673167a05f322b1c3b754c746a7366b1e821155c30d6af9baa0",
+        "signature": "d016833ff3331c05b1569f42b05bf4e14f03da3a7b7e990349869bff0fc14296",
+        "affectsGlobalScope": false
+      },
       "../src/user/entities/user.entity.ts": {
-        "version": "7ad87619542aa5d15035689e588ce1cdf61add4d5cfdf4c34ebe11c4284638af",
-        "signature": "35bd0b340a47d7c21c64502c4eb5313b8b4f4a9029ebcc29ca4291e077f8901e",
+        "version": "d902b1827a335059b5f8685027c7d3220e43009c956a7efc352c9f81f6d471bd",
+        "signature": "5bcf1132c49996d7727fb3fbeb23ac04e7fdbfae6fed52935a08af8041b2c50f",
         "affectsGlobalScope": false
       },
       "../src/user/user.service.ts": {
@@ -3436,8 +3451,83 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../src/question/dto/create-question.dto.ts": {
+        "version": "1a0dc0d34bddccee3c60a2ae9e9bb8eee3ce639389a4cc220653b368d3cc9e0d",
+        "signature": "c010c2e2903c915d1756960e049439773a9c22eced37ee46893d8d06c0c3b8bb",
+        "affectsGlobalScope": false
+      },
+      "../src/question/dto/update-question.dto.ts": {
+        "version": "8753d0abf1fab4e7a6c0810fbf4107336f66f5125c1d850a4c98836d7aa97783",
+        "signature": "01912730dbe4b300de42315eef972d3a96cb0c47f9375160ff3da111b1eb1655",
+        "affectsGlobalScope": false
+      },
+      "../src/question/question.service.ts": {
+        "version": "637a6895e56ec1af1ab235739e7582254f38ad53c3e5d9fca74fca367b612b78",
+        "signature": "32f20b6fc4ed37cf078e606de2f531306e22ae9a96b91d9281aa63460bb0365d",
+        "affectsGlobalScope": false
+      },
+      "../src/question/question.controller.ts": {
+        "version": "5cdcb2446ef854e5ea8edc53a642efe258aadd367a5df5b695b14eba00b46998",
+        "signature": "5ed0a1c16fa27a27d1ffbe679e0f5e57b7e0b1ef242e3d772a116109ec807b1f",
+        "affectsGlobalScope": false
+      },
+      "../src/question/question.module.ts": {
+        "version": "551fff93cf5bdb737737f4cd076e9ba0f721deca0b29f8b95f89f57235d4275a",
+        "signature": "1b867860095e230758cbe5acf3e680b526d348bbe7581eaac1b68464d115c003",
+        "affectsGlobalScope": false
+      },
+      "../src/answer/dto/create-answer.dto.ts": {
+        "version": "8a707deb757daa8fe60b3db75f9eb77e8cb8beada004600eb8d42195cca5af47",
+        "signature": "a24b566180051db4b5b2c783337470f9a2a5c2afa804ffb75e8b1e32db275322",
+        "affectsGlobalScope": false
+      },
+      "../src/answer/dto/update-answer.dto.ts": {
+        "version": "cd3a8cb3a48fabb9a1112d8d34bb1f98cf462401f4ee900187b96244ddf256da",
+        "signature": "3f7858c5edb5fabe15871b2e04f021291ae7e5487d4dd89557b71bd7807bfd4a",
+        "affectsGlobalScope": false
+      },
+      "../src/answer/answer.service.ts": {
+        "version": "daf51a1115c887dd0b6003978b580a06a4a1665dd5a70bbc22611395edab4310",
+        "signature": "1253667e878c5f38cc4c284046e141751c309e3a0f1bbd4245b9dadc595315d5",
+        "affectsGlobalScope": false
+      },
+      "../src/answer/answer.controller.ts": {
+        "version": "04ed49efc212b1b77ad778f814431aab644525f48d9e63ece23181e09c2c779f",
+        "signature": "0952279cfbdc9314b8790cd5590ae2fad0163ca6678d92b97f738c1aba6dac7e",
+        "affectsGlobalScope": false
+      },
+      "../src/answer/answer.module.ts": {
+        "version": "15c7a3a57c5974997eecd9c8969f9c7a4ecb2a4b5978847d872b370d54baa874",
+        "signature": "b74182978db13f8517561b3c901874bb683470a159022d3499bcf0b903badd56",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/dto/create-keyword.dto.ts": {
+        "version": "25acdb0c8d9f7a97f7d2024f990f9918226a5391a68d263452f78b7254e724a4",
+        "signature": "67c0dc5d5f709be56447da601ec9e9ac37ab623764f822cd86791f23925a9c4c",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/dto/update-keyword.dto.ts": {
+        "version": "281b8d72b7a70e35ef9cec9e8c7a774f9a946c070f233dfcbae6c5e098b9cba8",
+        "signature": "73de9c9ad42508f7d764a791273e81f0ab62166ebc886a1088f06734b19772f8",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/keyword.service.ts": {
+        "version": "0d857c2359e8632c985e02733e657410158aa7cda23432a30270bb3627585d1c",
+        "signature": "18c77d2a62ed59b18aa7282f46150f3d49a6d77b8928d767caab62c28c339ade",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/keyword.controller.ts": {
+        "version": "42451b2f30696a3364af0a0ff4b6537c527305fc5d6f45f05d09a81810133f7b",
+        "signature": "b69f948544a671a07405424c1c4ce3f32abd64fd3397f9b300103937595f4c52",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/keyword.module.ts": {
+        "version": "5003852fa962950c7d488045bc42ac2dc7a2010770fa46c73ea6618ed1a21735",
+        "signature": "41079f361f8eab0367c9df22d05a97c7af135021c63e62bba603c217d2bd9c12",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "63c0ef31f2d81b9a9f0d083038641be082fc95a9c13d7e3fdcd0f31fca2a21dc",
+        "version": "d47e291ac057a519527cd4f7d176a4c745329067089ceb86c59492be049c2e25",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -6490,6 +6580,31 @@
         "../node_modules/typeorm/metadata/relationmetadata.d.ts",
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
       ],
+      "../src/answer/answer.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/answer/answer.service.ts",
+        "../src/answer/dto/create-answer.dto.ts",
+        "../src/answer/dto/update-answer.dto.ts"
+      ],
+      "../src/answer/answer.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/answer/answer.controller.ts",
+        "../src/answer/answer.service.ts"
+      ],
+      "../src/answer/answer.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/answer/dto/create-answer.dto.ts",
+        "../src/answer/dto/update-answer.dto.ts"
+      ],
+      "../src/answer/dto/update-answer.dto.ts": [
+        "../node_modules/@nestjs/mapped-types/index.d.ts",
+        "../src/answer/dto/create-answer.dto.ts"
+      ],
+      "../src/answer/entities/answer.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/question/entities/question.entity.ts",
+        "../src/user/entities/user.entity.ts"
+      ],
       "../src/app.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.service.ts"
@@ -6498,9 +6613,12 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/answer/answer.module.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/auth/auth.module.ts",
+        "../src/keyword/keyword.module.ts",
+        "../src/question/question.module.ts",
         "../src/user/user.module.ts"
       ],
       "../src/app.service.ts": [
@@ -6551,9 +6669,65 @@
         "../node_modules/@types/passport-local/index.d.ts",
         "../src/auth/auth.service.ts"
       ],
+      "../src/keyword/dto/update-keyword.dto.ts": [
+        "../node_modules/@nestjs/mapped-types/index.d.ts",
+        "../src/keyword/dto/create-keyword.dto.ts"
+      ],
+      "../src/keyword/entities/keyword.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/question/entities/question.entity.ts"
+      ],
+      "../src/keyword/keyword.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/keyword/dto/create-keyword.dto.ts",
+        "../src/keyword/dto/update-keyword.dto.ts",
+        "../src/keyword/keyword.service.ts"
+      ],
+      "../src/keyword/keyword.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/keyword/keyword.controller.ts",
+        "../src/keyword/keyword.service.ts"
+      ],
+      "../src/keyword/keyword.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/keyword/dto/create-keyword.dto.ts",
+        "../src/keyword/dto/update-keyword.dto.ts"
+      ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts"
+      ],
+      "../src/question/dto/update-question.dto.ts": [
+        "../node_modules/@nestjs/mapped-types/index.d.ts",
+        "../src/question/dto/create-question.dto.ts"
+      ],
+      "../src/question/entities/question.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/answer/entities/answer.entity.ts",
+        "../src/keyword/entities/keyword.entity.ts",
+        "../src/user/entities/user.entity.ts"
+      ],
+      "../src/question/question.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/auth/jwt-auth.guard.ts",
+        "../src/question/dto/create-question.dto.ts",
+        "../src/question/dto/update-question.dto.ts",
+        "../src/question/question.service.ts"
+      ],
+      "../src/question/question.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/question/entities/question.entity.ts",
+        "../src/question/question.controller.ts",
+        "../src/question/question.service.ts"
+      ],
+      "../src/question/question.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/question/dto/create-question.dto.ts",
+        "../src/question/dto/update-question.dto.ts",
+        "../src/question/entities/question.entity.ts"
       ],
       "../src/user/dto/update-user.dto.ts": [
         "../node_modules/@nestjs/mapped-types/index.d.ts",
@@ -6561,7 +6735,9 @@
       ],
       "../src/user/entities/user.entity.ts": [
         "../node_modules/@types/bcrypt/index.d.ts",
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/typeorm/index.d.ts",
+        "../src/answer/entities/answer.entity.ts",
+        "../src/question/entities/question.entity.ts"
       ],
       "../src/user/user.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -9260,6 +9436,23 @@
         "../node_modules/typeorm/metadata/relationmetadata.d.ts",
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
       ],
+      "../src/answer/answer.controller.ts": [
+        "../src/answer/answer.service.ts",
+        "../src/answer/dto/create-answer.dto.ts",
+        "../src/answer/dto/update-answer.dto.ts"
+      ],
+      "../src/answer/answer.service.ts": [
+        "../src/answer/dto/create-answer.dto.ts",
+        "../src/answer/dto/update-answer.dto.ts"
+      ],
+      "../src/answer/dto/update-answer.dto.ts": [
+        "../node_modules/@nestjs/mapped-types/index.d.ts",
+        "../src/answer/dto/create-answer.dto.ts"
+      ],
+      "../src/answer/entities/answer.entity.ts": [
+        "../src/question/entities/question.entity.ts",
+        "../src/user/entities/user.entity.ts"
+      ],
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
@@ -9286,9 +9479,50 @@
         "../node_modules/@types/passport-local/index.d.ts",
         "../src/auth/auth.service.ts"
       ],
+      "../src/keyword/dto/update-keyword.dto.ts": [
+        "../node_modules/@nestjs/mapped-types/index.d.ts",
+        "../src/keyword/dto/create-keyword.dto.ts"
+      ],
+      "../src/keyword/entities/keyword.entity.ts": [
+        "../src/question/entities/question.entity.ts"
+      ],
+      "../src/keyword/keyword.controller.ts": [
+        "../src/keyword/dto/create-keyword.dto.ts",
+        "../src/keyword/dto/update-keyword.dto.ts",
+        "../src/keyword/keyword.service.ts"
+      ],
+      "../src/keyword/keyword.service.ts": [
+        "../src/keyword/dto/create-keyword.dto.ts",
+        "../src/keyword/dto/update-keyword.dto.ts"
+      ],
+      "../src/question/dto/update-question.dto.ts": [
+        "../node_modules/@nestjs/mapped-types/index.d.ts",
+        "../src/question/dto/create-question.dto.ts"
+      ],
+      "../src/question/entities/question.entity.ts": [
+        "../src/answer/entities/answer.entity.ts",
+        "../src/keyword/entities/keyword.entity.ts",
+        "../src/user/entities/user.entity.ts"
+      ],
+      "../src/question/question.controller.ts": [
+        "../src/question/dto/create-question.dto.ts",
+        "../src/question/dto/update-question.dto.ts",
+        "../src/question/entities/question.entity.ts",
+        "../src/question/question.service.ts"
+      ],
+      "../src/question/question.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/question/dto/create-question.dto.ts",
+        "../src/question/dto/update-question.dto.ts",
+        "../src/question/entities/question.entity.ts"
+      ],
       "../src/user/dto/update-user.dto.ts": [
         "../node_modules/@nestjs/mapped-types/index.d.ts",
         "../src/user/dto/create-user.dto.ts"
+      ],
+      "../src/user/entities/user.entity.ts": [
+        "../src/answer/entities/answer.entity.ts",
+        "../src/question/entities/question.entity.ts"
       ],
       "../src/user/user.controller.ts": [
         "../src/user/dto/update-user.dto.ts",

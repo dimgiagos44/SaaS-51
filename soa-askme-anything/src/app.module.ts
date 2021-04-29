@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { QuestionModule } from './question/question.module';
 import { AnswerModule } from './answer/answer.module';
+import { KeywordModule } from './keyword/keyword.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { AnswerModule } from './answer/answer.module';
     ConfigModule.forRoot(),
     QuestionModule,
     AnswerModule,
+    KeywordModule,
   ],
   controllers: [AppController],
   providers: [AppService],
