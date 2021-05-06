@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const keyword_service_1 = require("./keyword.service");
 const create_keyword_dto_1 = require("./dto/create-keyword.dto");
 const update_keyword_dto_1 = require("./dto/update-keyword.dto");
+const jwt_auth_guard_1 = require("../auth/jwt-auth.guard");
 let KeywordController = class KeywordController {
     constructor(keywordService) {
         this.keywordService = keywordService;
@@ -30,6 +31,9 @@ let KeywordController = class KeywordController {
     findOne(id) {
         return this.keywordService.findOne(+id);
     }
+    findOneByText(text) {
+        return this.keywordService.findOneByText(text);
+    }
     update(id, updateKeywordDto) {
         return this.keywordService.update(+id, updateKeywordDto);
     }
@@ -38,6 +42,7 @@ let KeywordController = class KeywordController {
     }
 };
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Post(),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
@@ -51,13 +56,21 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], KeywordController.prototype, "findAll", null);
 __decorate([
-    common_1.Get(':id'),
+    common_1.Get('/id/:id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], KeywordController.prototype, "findOne", null);
 __decorate([
+    common_1.Get('/text/:text'),
+    __param(0, common_1.Param('text')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], KeywordController.prototype, "findOneByText", null);
+__decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Patch(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -65,6 +78,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], KeywordController.prototype, "update", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Delete(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),

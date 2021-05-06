@@ -17,19 +17,39 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const question_entity_1 = require("./entities/question.entity");
+const user_entity_1 = require("../user/entities/user.entity");
+const keyword_entity_1 = require("../keyword/entities/keyword.entity");
 let QuestionService = class QuestionService {
     constructor(manager) {
         this.manager = manager;
     }
     async create(createQuestionDto) {
-        const question = await this.manager.create(question_entity_1.Question, createQuestionDto);
-        return this.manager.save(question);
+        return this.manager.transaction(async (manager) => {
+            const userId = createQuestionDto.user.id;
+            if (!userId)
+                throw new common_1.BadRequestException(`User id ${userId} is missing`);
+            const user = await manager.findOne(user_entity_1.User, createQuestionDto.user.id);
+            if (!user)
+                throw new common_1.NotFoundException(`User with id: ${userId} not found`);
+            const keywordsList = createQuestionDto.keywords;
+            console.log(keywordsList);
+            for (let i of keywordsList) {
+                const keyword = await manager.findOne(keyword_entity_1.Keyword, i);
+                if (!keyword)
+                    throw new common_1.NotFoundException(`Keyword with ${i} not exists`);
+            }
+            const keywords = await manager.findByIds(keyword_entity_1.Keyword, keywordsList);
+            const question = await manager.create(question_entity_1.Question, createQuestionDto);
+            question.user = user;
+            question.keywords = keywords;
+            return manager.save(question);
+        });
     }
     async findAll() {
-        return this.manager.find(question_entity_1.Question);
+        return this.manager.find(question_entity_1.Question, { loadRelationIds: true });
     }
     async findOne(id) {
-        const question = await this.manager.findOne(question_entity_1.Question, id);
+        const question = await this.manager.findOne(question_entity_1.Question, id, { relations: ['user', 'keywords'] });
         if (!question)
             throw new common_1.NotFoundException(`Question with id: ${id} not found.`);
         return question;

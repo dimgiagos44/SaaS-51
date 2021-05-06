@@ -4,9 +4,9 @@ import { UpdateAnswerDto } from './dto/update-answer.dto';
 export declare class AnswerController {
     private readonly answerService;
     constructor(answerService: AnswerService);
-    create(createAnswerDto: CreateAnswerDto): string;
-    findAll(): string;
-    findOne(id: string): string;
-    update(id: string, updateAnswerDto: UpdateAnswerDto): string;
-    remove(id: string): string;
+    create(createAnswerDto: CreateAnswerDto): Promise<import("./entities/answer.entity").Answer>;
+    findAll(): Promise<import("./entities/answer.entity").Answer[]>;
+    findOne(id: string): Promise<import("./entities/answer.entity").Answer>;
+    update(id: string, updateAnswerDto: UpdateAnswerDto): Promise<import("./entities/answer.entity").Answer>;
+    remove(id: string): Promise<void>;
 }

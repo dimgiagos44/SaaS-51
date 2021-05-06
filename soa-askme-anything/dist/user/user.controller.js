@@ -39,6 +39,7 @@ let UserController = class UserController {
 };
 __decorate([
     common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
+    common_1.UseInterceptors(common_1.ClassSerializerInterceptor),
     common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -52,13 +53,14 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "findOne", null);
 __decorate([
-    common_1.Get(':username'),
+    common_1.Get('/username/:username'),
     __param(0, common_1.Param('username')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "findOneByUsername", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Patch(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),

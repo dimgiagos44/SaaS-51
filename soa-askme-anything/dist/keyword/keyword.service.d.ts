@@ -1,9 +1,14 @@
 import { CreateKeywordDto } from './dto/create-keyword.dto';
 import { UpdateKeywordDto } from './dto/update-keyword.dto';
+import { EntityManager } from 'typeorm';
+import { Keyword } from './entities/keyword.entity';
 export declare class KeywordService {
-    create(createKeywordDto: CreateKeywordDto): string;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updateKeywordDto: UpdateKeywordDto): string;
-    remove(id: number): string;
+    private manager;
+    constructor(manager: EntityManager);
+    create(createKeywordDto: CreateKeywordDto): Promise<Keyword>;
+    findAll(): Promise<Keyword[]>;
+    findOne(id: number): Promise<Keyword>;
+    findOneByText(text: string): Promise<Keyword>;
+    update(id: number, updateKeywordDto: UpdateKeywordDto): Promise<Keyword>;
+    remove(id: number): Promise<void>;
 }

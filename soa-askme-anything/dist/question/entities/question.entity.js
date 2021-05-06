@@ -29,11 +29,11 @@ __decorate([
     __metadata("design:type", String)
 ], Question.prototype, "createdAt", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => user_entity_1.User, (user) => user.questions),
+    typeorm_1.ManyToOne(() => user_entity_1.User, (user) => user.questions, { onDelete: 'CASCADE' }),
     __metadata("design:type", user_entity_1.User)
 ], Question.prototype, "user", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => answer_entity_1.Answer, (answer) => answer.question),
+    typeorm_1.OneToMany(() => answer_entity_1.Answer, (answer) => answer.question, { cascade: true }),
     __metadata("design:type", Array)
 ], Question.prototype, "answers", void 0);
 __decorate([

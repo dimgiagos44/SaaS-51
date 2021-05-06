@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const answer_service_1 = require("./answer.service");
 const create_answer_dto_1 = require("./dto/create-answer.dto");
 const update_answer_dto_1 = require("./dto/update-answer.dto");
+const jwt_auth_guard_1 = require("../auth/jwt-auth.guard");
 let AnswerController = class AnswerController {
     constructor(answerService) {
         this.answerService = answerService;
@@ -38,6 +39,7 @@ let AnswerController = class AnswerController {
     }
 };
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Post(),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
@@ -58,6 +60,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AnswerController.prototype, "findOne", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Patch(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -65,6 +68,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AnswerController.prototype, "update", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Delete(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),

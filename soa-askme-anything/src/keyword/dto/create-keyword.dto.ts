@@ -1,1 +1,3 @@
-export class CreateKeywordDto {}
+export class CreateKeywordDto {
+  readonly text: string;
+}

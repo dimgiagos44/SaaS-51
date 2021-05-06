@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const user_entity_1 = require("./entities/user.entity");
+const bcrypt = require("bcrypt");
 let UserService = class UserService {
     constructor(manager) {
         this.manager = manager;
@@ -45,6 +46,13 @@ let UserService = class UserService {
             const user = await manager.findOne(user_entity_1.User, id);
             if (!user)
                 throw new common_1.NotFoundException(`User with id: ${id} not found`);
+            const passwordChanged = updateUserDto.password;
+            if (!passwordChanged) {
+                manager.merge(user_entity_1.User, user, updateUserDto);
+                return manager.save(user);
+            }
+            const passwordChangedHashed = bcrypt.hash(passwordChanged, 10);
+            updateUserDto.password = await passwordChangedHashed;
             manager.merge(user_entity_1.User, user, updateUserDto);
             return manager.save(user);
         });
