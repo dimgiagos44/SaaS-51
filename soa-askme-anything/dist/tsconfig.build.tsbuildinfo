@@ -3082,8 +3082,8 @@
         "affectsGlobalScope": false
       },
       "../src/question/entities/question.entity.ts": {
-        "version": "9813acae2c0a925ffa8123fa0e461db3b969534a075eac1e9aa00eabd0584432",
-        "signature": "d016833ff3331c05b1569f42b05bf4e14f03da3a7b7e990349869bff0fc14296",
+        "version": "b33dcc1c3954efc46697b71801b03cbc4ce0fd0b1779540d06d66281a575ffeb",
+        "signature": "f155cafaca8dcf2b831827d4728cc415e9a3d1d2162a6c4704e4accf8d3932a6",
         "affectsGlobalScope": false
       },
       "../src/user/entities/user.entity.ts": {
@@ -3767,8 +3767,8 @@
         "affectsGlobalScope": false
       },
       "../src/question/dto/create-question.dto.ts": {
-        "version": "eef9b3c652c5dd2e79f249290d5290cae2ae5d8238279fb5d1630c94e74b6391",
-        "signature": "f375196f0e79fa0aef623bbd338f4f5a9de07872f0e2ec85751b33197cda3c0e",
+        "version": "2c71571bdbeab7f437ff4263da82d1cbc332c55f9b2be76cf091d459fe33102c",
+        "signature": "09ef82a531dca5066bd17270aaa110c3df4c57a0cc3ef9e70250db9bc00bc8a5",
         "affectsGlobalScope": false
       },
       "../src/question/dto/update-question.dto.ts": {
@@ -3777,7 +3777,7 @@
         "affectsGlobalScope": false
       },
       "../src/question/question.service.ts": {
-        "version": "75469140b9aa30ceea69e04062bba6192b41bd772f5730499e6a44015c35a652",
+        "version": "bf25edfa03b15835314599cde72cf096572daf9da56a708120a32d90b4fcc952",
         "signature": "32f20b6fc4ed37cf078e606de2f531306e22ae9a96b91d9281aa63460bb0365d",
         "affectsGlobalScope": false
       },
@@ -3847,7 +3847,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "e25d9bd8f80b6ffbcc8826ed1b407e747e4fbe346c5bab62cbe5837da4eeb189",
+        "version": "75bf26829727d1e589352423d9e620c3268c6b14541273c93cd2ebd0adcbb3b4",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },

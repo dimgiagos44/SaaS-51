@@ -21,6 +21,10 @@ __decorate([
     __metadata("design:type", Number)
 ], Question.prototype, "id", void 0);
 __decorate([
+    typeorm_1.Column({ nullable: true, unique: true }),
+    __metadata("design:type", String)
+], Question.prototype, "title", void 0);
+__decorate([
     typeorm_1.Column({ nullable: false, unique: true }),
     __metadata("design:type", String)
 ], Question.prototype, "text", void 0);

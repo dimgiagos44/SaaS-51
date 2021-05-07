@@ -18,6 +18,9 @@ export class Question {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ nullable: true, unique: true })
+  title: string;
+
   @Column({ nullable: false, unique: true })
   text: string;
 

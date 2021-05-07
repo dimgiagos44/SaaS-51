@@ -3,6 +3,7 @@ import { Answer } from '../../answer/entities/answer.entity';
 import { Keyword } from '../../keyword/entities/keyword.entity';
 export declare class Question {
     id: number;
+    title: string;
     text: string;
     createdAt: string;
     user: User;
