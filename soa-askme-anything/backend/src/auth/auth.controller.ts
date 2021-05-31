@@ -3,6 +3,7 @@ import { Body, Controller, Post, Request, UseGuards } from '@nestjs/common';
 import { LocalAuthGuard } from './local-auth.guard';
 import { CreateUserDto } from '../user/dto/create-user.dto';
 import { UserService } from '../user/user.service';
+import { JwtAuthGuard } from './jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -18,4 +19,5 @@ export class AuthController {
   async signup(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
+
 }

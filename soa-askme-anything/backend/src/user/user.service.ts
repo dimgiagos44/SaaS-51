@@ -4,8 +4,6 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectEntityManager } from '@nestjs/typeorm';
 import { EntityManager } from 'typeorm';
 import { User } from './entities/user.entity';
-import { REQUEST } from '@nestjs/core';
-import { Request } from 'express';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()

@@ -46,13 +46,20 @@ let QuestionService = class QuestionService {
         });
     }
     async findAll() {
-        return this.manager.find(question_entity_1.Question, { loadRelationIds: true });
+        return this.manager.find(question_entity_1.Question, { relations: ['user', 'keywords', 'answers'] });
     }
     async findOne(id) {
-        const question = await this.manager.findOne(question_entity_1.Question, id, { relations: ['user', 'keywords'] });
+        const question = await this.manager.findOne(question_entity_1.Question, id, { relations: ['user', 'keywords', 'answers'] });
         if (!question)
             throw new common_1.NotFoundException(`Question with id: ${id} not found.`);
         return question;
+    }
+    async findQuestionsByUserId(userId) {
+        const user = await this.manager.findOne(user_entity_1.User, userId);
+        if (!user) {
+            throw new common_1.NotFoundException(`User with id = ${userId} not exists`);
+        }
+        return this.manager.find(question_entity_1.Question, { user: user });
     }
     async update(id, updateQuestionDto) {
         return this.manager.transaction(async (manager) => {

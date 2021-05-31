@@ -24,6 +24,11 @@ export class AnswerController {
     return this.answerService.findOne(+id);
   }
 
+  @Get('/user/:userId')
+  findQuestionsByUserId(@Param('userId') userId: string) {
+    return this.answerService.findAnswersByUserId(+userId);
+  }
+
   @UseGuards(JwtAuthGuard)
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateAnswerDto: UpdateAnswerDto) {

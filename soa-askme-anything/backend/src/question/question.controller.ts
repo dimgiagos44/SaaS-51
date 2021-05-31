@@ -14,6 +14,11 @@ export class QuestionController {
     return this.questionService.create(createQuestionDto);
   }
 
+  @Get('/user/:userId')
+  findQuestionsByUserId(@Param('userId') userId: string) {
+    return this.questionService.findQuestionsByUserId(+userId);
+  }
+
   @Get()
   findAll() {
     return this.questionService.findAll();

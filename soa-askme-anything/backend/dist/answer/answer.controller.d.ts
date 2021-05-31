@@ -7,6 +7,7 @@ export declare class AnswerController {
     create(createAnswerDto: CreateAnswerDto): Promise<import("./entities/answer.entity").Answer>;
     findAll(): Promise<import("./entities/answer.entity").Answer[]>;
     findOne(id: string): Promise<import("./entities/answer.entity").Answer>;
+    findQuestionsByUserId(userId: string): Promise<import("./entities/answer.entity").Answer[]>;
     update(id: string, updateAnswerDto: UpdateAnswerDto): Promise<import("./entities/answer.entity").Answer>;
     remove(id: string): Promise<void>;
 }

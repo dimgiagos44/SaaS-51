@@ -44,13 +44,23 @@ let AnswerService = class AnswerService {
         });
     }
     async findAll() {
-        return this.manager.find(answer_entity_1.Answer, { loadRelationIds: true });
+        return this.manager.find(answer_entity_1.Answer, { relations: ['user', 'question'] });
     }
     async findOne(id) {
         const answer = await this.manager.findOne(answer_entity_1.Answer, id, { relations: ['user', 'question'] });
         if (!answer)
             throw new common_1.NotFoundException(`cannot find answer with id ${id}`);
         return answer;
+    }
+    async findAnswersByUserId(userId) {
+        const user = await this.manager.findOne(user_entity_1.User, userId);
+        if (!user) {
+            throw new common_1.NotFoundException(`User with id = ${userId} not exists`);
+        }
+        const answers = await this.manager.find(answer_entity_1.Answer, { user: user });
+        const answerIds = [];
+        answers.forEach((answer) => answerIds.push(answer.id));
+        return await this.manager.findByIds(answer_entity_1.Answer, answers, { relations: ['user', 'question'] });
     }
     async update(id, updateAnswerDto) {
         return this.manager.transaction(async (manager) => {

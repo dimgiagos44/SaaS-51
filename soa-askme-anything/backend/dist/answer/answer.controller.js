@@ -31,6 +31,9 @@ let AnswerController = class AnswerController {
     findOne(id) {
         return this.answerService.findOne(+id);
     }
+    findQuestionsByUserId(userId) {
+        return this.answerService.findAnswersByUserId(+userId);
+    }
     update(id, updateAnswerDto) {
         return this.answerService.update(+id, updateAnswerDto);
     }
@@ -59,6 +62,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], AnswerController.prototype, "findOne", null);
+__decorate([
+    common_1.Get('/user/:userId'),
+    __param(0, common_1.Param('userId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], AnswerController.prototype, "findQuestionsByUserId", null);
 __decorate([
     common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Patch(':id'),

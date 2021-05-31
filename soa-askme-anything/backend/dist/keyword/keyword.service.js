@@ -28,10 +28,10 @@ let KeywordService = class KeywordService {
         });
     }
     async findAll() {
-        return this.manager.find(keyword_entity_1.Keyword);
+        return this.manager.find(keyword_entity_1.Keyword, { relations: ['questions'] });
     }
     async findOne(id) {
-        const keyword = await this.manager.findOne(keyword_entity_1.Keyword, id);
+        const keyword = await this.manager.findOne(keyword_entity_1.Keyword, id, { relations: ['questions'] });
         if (!keyword)
             throw new common_1.NotFoundException(`Keyword with ${id} was not found.`);
         return keyword;

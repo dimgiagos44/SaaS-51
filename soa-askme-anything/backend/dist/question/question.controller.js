@@ -25,6 +25,9 @@ let QuestionController = class QuestionController {
     create(createQuestionDto) {
         return this.questionService.create(createQuestionDto);
     }
+    findQuestionsByUserId(userId) {
+        return this.questionService.findQuestionsByUserId(+userId);
+    }
     findAll() {
         return this.questionService.findAll();
     }
@@ -46,6 +49,13 @@ __decorate([
     __metadata("design:paramtypes", [create_question_dto_1.CreateQuestionDto]),
     __metadata("design:returntype", void 0)
 ], QuestionController.prototype, "create", null);
+__decorate([
+    common_1.Get('/user/:userId'),
+    __param(0, common_1.Param('userId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], QuestionController.prototype, "findQuestionsByUserId", null);
 __decorate([
     common_1.Get(),
     __metadata("design:type", Function),

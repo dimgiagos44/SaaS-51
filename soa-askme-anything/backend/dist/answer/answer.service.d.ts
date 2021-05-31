@@ -8,6 +8,7 @@ export declare class AnswerService {
     create(createAnswerDto: CreateAnswerDto): Promise<Answer>;
     findAll(): Promise<Answer[]>;
     findOne(id: number): Promise<Answer>;
+    findAnswersByUserId(userId: number): Promise<Answer[]>;
     update(id: number, updateAnswerDto: UpdateAnswerDto): Promise<Answer>;
     remove(id: number): Promise<void>;
 }

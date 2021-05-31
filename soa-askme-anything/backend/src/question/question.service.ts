@@ -37,14 +37,23 @@ export class QuestionService {
   }
 
   async findAll(): Promise<Question[]> {
-    return this.manager.find(Question, { loadRelationIds: true });
+    return this.manager.find(Question, { relations: ['user', 'keywords', 'answers'] });
   }
 
   async findOne(id: number): Promise<Question> {
-    const question = await this.manager.findOne(Question, id, { relations: ['user', 'keywords'] });
+    const question = await this.manager.findOne(Question, id, { relations: ['user', 'keywords', 'answers'] });
     if (!question)
       throw new NotFoundException(`Question with id: ${id} not found.`);
     return question;
+  }
+
+  async findQuestionsByUserId(userId: number): Promise<Question[]> {
+    //check if user with id = id, exists
+    const user = await this.manager.findOne(User, userId);
+    if (!user) {
+      throw new NotFoundException(`User with id = ${userId} not exists`);
+    }
+    return this.manager.find(Question, { user: user });
   }
 
   async update(

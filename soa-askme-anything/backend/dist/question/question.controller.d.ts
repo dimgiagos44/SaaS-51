@@ -5,6 +5,7 @@ export declare class QuestionController {
     private readonly questionService;
     constructor(questionService: QuestionService);
     create(createQuestionDto: CreateQuestionDto): Promise<import("./entities/question.entity").Question>;
+    findQuestionsByUserId(userId: string): Promise<import("./entities/question.entity").Question[]>;
     findAll(): Promise<import("./entities/question.entity").Question[]>;
     findOne(id: string): Promise<import("./entities/question.entity").Question>;
     update(id: string, updateQuestionDto: UpdateQuestionDto): Promise<import("./entities/question.entity").Question>;
