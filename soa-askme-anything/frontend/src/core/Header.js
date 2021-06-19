@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
-        marginLeft: 600,
+        marginLeft: 350,
     },
 }));
 
@@ -65,17 +65,17 @@ const Header = props => {
                 <Toolbar>
                     {isAuthenticated() &&
                         <IconButton edge="start" className={classes.menuButton} onClick={() => handleClick('/account')} color="inherit">
-                            <FlashOn/>
+                            <FlashOn/><Typography variant="button">Personal actions</Typography>
                         </IconButton>
                     }
                     {isAuthenticated() &&
                         <IconButton className={classes.menuButton} size="small" color="inherit" onClick={() => handleClick('/myaccount')}>
-                            <AccountCircle/>
+                            <AccountCircle/><Typography variant="button">My account</Typography>
                         </IconButton>
                     }
                     {props.showHome &&
                     <IconButton edge="start" className={classes.homeButton} color="inherit" onClick={() => handleClickHome('/')}>
-                        <HomeIcon/>
+                        <HomeIcon/><Typography variant="button">Home</Typography>
                     </IconButton>
                     }
                     <Typography variant="h6" className={classes.title}>

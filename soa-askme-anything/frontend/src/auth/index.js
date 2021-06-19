@@ -1,5 +1,5 @@
 export const signup = user => {
-    return fetch(`http://localhost:3001/auth/signup`, {
+    return fetch(`http://localhost:4001/signup`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -14,7 +14,7 @@ export const signup = user => {
 };
 
 export const login = user => {
-    return fetch(`http://localhost:3001/auth/login`, {
+    return fetch(`http://localhost:4001/login`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import {readAll, readQuestion} from './apiQuestion';
 import {Button, Card, CardContent, MenuItem, TextField, Typography, withStyles} from "@material-ui/core";
-import {createAnswer, readAnswer} from "../Answer/apiAnswer";
+import {createAnswer, } from "../Answer/apiAnswer";
 import {isAuthenticated} from "../auth";
-import {read} from "../user/apiUser";
 
 const styles = theme => ({
     container: {

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {Card, CardContent, Typography, withStyles} from "@material-ui/core";
 import {readUser} from "./apiUser";
-import {readAnswer} from "../Answer/apiAnswer";
 
 const styles = theme => ({
     card: {

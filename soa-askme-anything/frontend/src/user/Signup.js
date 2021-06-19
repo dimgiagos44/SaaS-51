@@ -1,29 +1,37 @@
 import React, { Component } from "react";
 import {signup} from "../auth";
 import { Link } from "react-router-dom";
-import {Button, Grid, Paper, TextField, withStyles} from "@material-ui/core";
-import {Create, Email, Face,  Lock} from "@material-ui/icons";
+import {Button, Grid, TextField, withStyles} from "@material-ui/core";
+import Avatar from '@material-ui/core/Avatar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 const styles = theme => ({
-    margin: {
-        margin: theme.spacing.unit * 2,
+    paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
-    padding: {
-        padding: theme.spacing.unit,
+    avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
     },
-    container: {
-        justifyContent: 'center',
-        width: "50%",
-        marginLeft: "25%",
-        marginTop: "9%",
-        height: "60%",
-        backgroundColor: "white"
-    }
+    form: {
+        width: '100%', // Fix IE 11 issue.
+        marginTop: theme.spacing(3),
+    },
+    submit: {
+        margin: theme.spacing(3, 0, 2),
+    },
 });
 
 class Signup extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             username: "",
             password: "",
@@ -70,70 +78,114 @@ class Signup extends Component {
         })
     };
 
-    signupForm = (username, password, email, firstname, lastname, classes) => (
-        <Paper className={classes.padding}>
-            <div className={classes.margin}>
-                <Grid container spacing={8} >
-                    <Grid item>
-                        <Face/>
-                    </Grid>
-                    <Grid item md={true} sm={true} xs={true}>
-                        <TextField id="username" label="Username" onChange={this.handleChange("username")} type="email" />
-                    </Grid>
-                </Grid>
-                <Grid container spacing={8} >
-                    <Grid item>
-                        <Lock/>
-                    </Grid>
-                    <Grid item md={true} sm={true} xs={true}>
-                        <TextField id="password" label="Password" onChange={this.handleChange("password")} type="password"/>
-                    </Grid>
-                </Grid>
-                <Grid container spacing={8} >
-                    <Grid item>
-                        <Email/>
-                    </Grid>
-                    <Grid item md={true} sm={true} xs={true}>
-                        <TextField id="email" label="Email" onChange={this.handleChange("email")} type="email"/>
-                    </Grid>
-                </Grid>
-                <Grid container spacing={8} >
-                    <Grid item>
-                        <Create/>
-                    </Grid>
-                    <Grid item md={true} sm={true} xs={true}>
-                        <TextField id="firstname" label="Firstname" onChange={this.handleChange("firstname")} type="firstname"/>
-                    </Grid>
-                </Grid>
-                <Grid container spacing={8} >
-                    <Grid item>
-                        <Create/>
-                    </Grid>
-                    <Grid item md={true} sm={true} xs={true}>
-                        <TextField id="lastname" label="Lastname" onChange={this.handleChange("lastname")} type="lastname"/>
-                    </Grid>
-                </Grid>
-                <Grid container  justify="center" style={{ marginTop: '10px' }}>
-                    <Button variant="outlined" onClick={this.clickSubmit} color="primary" style={{ textTransform: "none" }}>Register</Button>
-                </Grid>
-            </div>
-        </Paper>
-    );
+    copyright = () => {
+        return (
+            <Typography variant="body2" color="textSecondary" align="center">
+                {'Copyright © '}
+                <Link color="inherit" href="https://material-ui.com/">
+                    Ask me anything
+                </Link>{' '}
+                {new Date().getFullYear()}
+                {'.'}
+            </Typography>
+        );
+    }
+
+
 
     render() {
         const { classes, setShowHome } = this.props;
         setShowHome(true);
-        const { username, password, email, firstname, lastname, error, open } = this.state;
+        const { open } = this.state;
         return(
-            <div className={classes.container}>
-                <h1 className="mt-5 mb-5">SignUp</h1>
-                {this.state.showMessage &&
-                    <p>Please fill all the fields. Thank you</p>
-                }
-                <br/>
-                {this.state.error &&
-                    <p>Bad request sir/madam. Try again</p>
-                }
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <div className={classes.paper}>
+                    <Avatar className={classes.avatar}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
+                        Sign up
+                    </Typography>
+                    <form className={classes.form} noValidate>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    name="username"
+                                    variant="outlined"
+                                    required
+                                    fullWidth
+                                    id="username"
+                                    label="Username"
+                                    onChange={this.handleChange("username")}
+                                    autoFocus
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    variant="outlined"
+                                    required
+                                    fullWidth
+                                    name="password"
+                                    label="Password"
+                                    type="password"
+                                    id="password"
+                                    onChange={this.handleChange("password")}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    variant="outlined"
+                                    required
+                                    fullWidth
+                                    onChange={this.handleChange("email")}
+                                    id="email"
+                                    label="Email Address"
+                                    name="email"
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    variant="outlined"
+                                    required
+                                    fullWidth
+                                    id="firstName"
+                                    label="First Name"
+                                    onChange={this.handleChange("firstname")}
+                                    name="firstName"
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    variant="outlined"
+                                    required
+                                    fullWidth
+                                    id="lastName"
+                                    label="Last Name"
+                                    onChange={this.handleChange("lastname")}
+                                    name="lastName"
+                                />
+                            </Grid>
+                        </Grid>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            onClick={this.clickSubmit}
+                            className={classes.submit}
+                        >
+                            Sign Up
+                        </Button>
+                        <Grid container justify="flex-end">
+                            <Grid item>
+                                <Link href="http://localhost:3000/login" variant="body2">
+                                    Already have an account? Log in
+                                </Link>
+                            </Grid>
+                        </Grid>
+                    </form>
+                </div>
                 <div
                     className="alert alert-info"
                     style={{ display: open ? "" : "none" }}
@@ -141,8 +193,10 @@ class Signup extends Component {
                     New account is successfully created. Please{" "}
                     <Link to="/login">Log in</Link>.
                 </div>
-                {this.signupForm(username, password, email, firstname, lastname, classes)}
-            </div>
+                <Box mt={5}>
+                    {this.copyright}
+                </Box>
+            </Container>
         );
     }
 }

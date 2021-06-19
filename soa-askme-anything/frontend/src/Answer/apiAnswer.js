@@ -1,8 +1,7 @@
 export const createAnswer = (answer, token) => {
-    return fetch(`http://localhost:3001/answer`, {
+    return fetch(`http://localhost:4000/answer`, {
         method: "POST",
         headers: {
-            //Accept: "application/json",
             'Content-Type': "application/json",
             Authorization: `Bearer ${token}`
         },
@@ -17,7 +16,7 @@ export const createAnswer = (answer, token) => {
 };
 
 export const readAnswer = (answerId) => {
-    return fetch(`http://localhost:3001/answer/${answerId}`, {
+    return fetch(`http://localhost:4000/answer/${answerId}`, {
         method: "GET"
     })
         .then(response => {
@@ -27,7 +26,7 @@ export const readAnswer = (answerId) => {
 };
 
 export const readAnswerByUserId = (userId) => {
-    return fetch(`http://localhost:3001/answer/user/${userId}`, {
+    return fetch(`http://localhost:4000/answer/user/${userId}`, {
         method: "GET"
     })
         .then(response => {

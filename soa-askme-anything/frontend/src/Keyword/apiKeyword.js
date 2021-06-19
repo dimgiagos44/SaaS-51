@@ -1,5 +1,5 @@
 export const readAllKeywords = () => {
-    return fetch(`http://localhost:3001/keyword`, {
+    return fetch(`http://localhost:4002/keyword`, {
         method: "GET"
     })
         .then(response => {
@@ -9,7 +9,7 @@ export const readAllKeywords = () => {
 };
 
 export const readKeyword = (keywordId) => {
-    return fetch(`http://localhost:3001/keyword/id/${keywordId}`, {
+    return fetch(`http://localhost:4002/keyword/id/${keywordId}`, {
         method: "GET"
     })
         .then(response => {

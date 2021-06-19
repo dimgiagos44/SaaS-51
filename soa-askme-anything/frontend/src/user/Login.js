@@ -1,33 +1,39 @@
 import React, {Component} from 'react';
 import {authenticate, login} from "../auth";
 import { Redirect } from "react-router-dom";
-import { Paper, withStyles, Grid, TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core';
-import {Face, Fingerprint} from "@material-ui/icons";
+import { withStyles, Grid, TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Link from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 const styles = theme => ({
-    margin: {
-        margin: theme.spacing.unit * 2,
+    paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
-    padding: {
-        padding: theme.spacing.unit,
-        height: 400,
-        marginTop: 100,
-
+    avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
     },
-    container: {
-        justifyContent: 'center',
-        width: 500,
-        marginLeft: "25%",
-        marginTop: "9%",
-        height: 500,
-        backgroundColor: "lavender"
-    }
+    form: {
+        width: '100%', // Fix IE 11 issue.
+        marginTop: theme.spacing(1),
+    },
+    submit: {
+        margin: theme.spacing(3, 0, 2),
+    },
 });
 
 class Login extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             username: "",
             password: "",
@@ -42,6 +48,19 @@ class Login extends Component {
         this.setState({ error: "" });
         this.setState({ [name]: event.target.value });
     };
+
+    copyright= () => {
+        return (
+            <Typography variant="body2" color="textSecondary" align="center">
+                {'Copyright © '}
+                <Link color="inherit" href="https://material-ui.com/">
+                    Ask me anything
+                </Link>{' '}
+                {new Date().getFullYear()}
+                {'.'}
+            </Typography>
+        );
+    }
 
     clickSubmit = event => {
         event.preventDefault();
@@ -72,64 +91,81 @@ class Login extends Component {
         })
     };
 
-    loginForm = (username, password, classes) => (
-        <Paper className={classes.padding}>
-            <div className={classes.margin}>
-                <Grid container spacing={8} >
-                    <Grid item>
-                        <Face/>
-                    </Grid>
-                    <Grid item md={true} sm={true} xs={true}>
-                        <TextField id="username" label="Username" onChange={this.handleChange("username")} type="email" />
-                    </Grid>
-                </Grid>
-                <Grid container spacing={8} >
-                    <Grid item>
-                        <Fingerprint />
-                    </Grid>
-                    <Grid item md={true} sm={true} xs={true}>
-                        <TextField id="password" label="Password" onChange={this.handleChange("password")} type="password"/>
-                    </Grid>
-                </Grid>
-                <Grid container spacing={8} alignItems="center" justify="space-between">
-                    <Grid item>
-                        <FormControlLabel control={
-                            <Checkbox
-                                color="primary"
-                            />
-                        } label="Remember me" />
-                    </Grid>
-                    <Grid item>
-                        <Button disableFocusRipple disableRipple style={{ textTransform: "none" }} variant="text" color="primary">Forgot password ?</Button>
-                    </Grid>
-                </Grid>
-                <Grid container  justify="center" style={{ marginTop: '10px' }}>
-                    <Button variant="outlined" onClick={this.clickSubmit} color="primary" style={{ textTransform: "none" }}>Login</Button>
-                </Grid>
-                {this.state.showWrongCredentials &&
-                    <h3>Invalid Username or Password</h3>
-                }
-            </div>
-        </Paper>
-    );
-
     render() {
         const { classes, setShowHome } = this.props;
-        const {
-            username,
-            password,
-            error,
-            redirectToReferer
-        } = this.state;
-
+        const {username, password, error, redirectToReferer} = this.state;
         if (redirectToReferer) {
             return <Redirect to="/" />;
         }
         setShowHome(true);
         return (
-            <div className={classes.container}>
-                {this.loginForm(username, password, classes)}
-            </div>
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <div className={classes.paper}>
+                    <Avatar className={classes.avatar}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
+                        Log in
+                    </Typography>
+                    <form className={classes.form} noValidate>
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="username"
+                            label="Username"
+                            name="username"
+                            onChange={this.handleChange("username")}
+                            autoFocus
+                        />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            onChange={this.handleChange("password")}
+                            label="Password"
+                            type="password"
+                            id="password"
+                        />
+                        <FormControlLabel
+                            control={<Checkbox value="remember" color="primary" />}
+                            label="Remember me"
+                        />
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            onClick={this.clickSubmit}
+                            className={classes.submit}
+                        >
+                            Sign In
+                        </Button>
+                        <Grid container>
+                            <Grid item xs>
+                                <Link href="#" variant="body2">
+                                    Forgot password?
+                                </Link>
+                            </Grid>
+                            <Grid item>
+                                <Link href="http://localhost:3000/signup" variant="body2">
+                                    {"Don't have an account? Sign Up"}
+                                </Link>
+                            </Grid>
+                        </Grid>
+                    </form>
+                </div>
+                {this.state.showWrongCredentials &&
+                <h3>Invalid Username or Password</h3>
+                }
+                <Box mt={8}>
+                    {this.copyright}
+                </Box>
+            </Container>
         );
     }
 
