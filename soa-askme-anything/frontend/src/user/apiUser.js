@@ -28,3 +28,21 @@ export const readUser = (userId, token) => {
         })
         .catch(err => console.log(err));
 };
+
+export const readUser2 = (userId, token) => {
+    return fetch(`http://localhost:4200/bus`, {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json",
+        },
+        body: JSON.stringify({
+            "url": "whoami",
+            "token": token,
+            "userId": userId
+        })
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};

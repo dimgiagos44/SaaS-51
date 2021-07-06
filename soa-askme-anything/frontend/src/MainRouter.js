@@ -13,6 +13,7 @@
  import MyAccount from "./user/MyAccount";
  import QuestionPerKeyword from "./question/QuestionPerKeyword";
  import QuestionPerPeriod from "./question/QuestionPerPeriod";
+ import Contributions from "./user/Contributions";
 
 function MainRouter() {
     const [showHome, setShowHome] = React.useState(false);
@@ -85,6 +86,12 @@ function MainRouter() {
                     exact path='/questionsperperiod'
                     render={(props) => (
                         <QuestionPerPeriod {...props} setShowHome={setShowHome}/>
+                    )}
+                />
+                <Route
+                    exact path='/contributions'
+                    render={(props) => (
+                        <Contributions {...props} setShowHome={setShowHome}/>
                     )}
                 />
             </Switch>

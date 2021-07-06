@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, withStyles} from "@material-ui/core";
-import {readAnswer, readAnswerByUserId} from "./apiAnswer";
+import {readAnswer, readAnswerByUserId2} from "./apiAnswer";
 import {readQuestionByUserId} from "../question/apiQuestion";
 
 
@@ -47,7 +47,7 @@ class MyAnswer extends Component {
 
     loadMyAnswers = () => {
         const userId = localStorage.getItem('userId');
-        readAnswerByUserId(userId).then(data => {
+        readAnswerByUserId2(userId).then(data => {
             if (data.error){
                 console.log(data.error);
             }

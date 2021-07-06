@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Button, TextField, withStyles} from "@material-ui/core";
-import {createQuestion, readAll} from "./apiQuestion";
-import {readAllKeywords} from "../Keyword/apiKeyword";
+import {createQuestion2, readAll} from "./apiQuestion";
+import {readAllKeywords2} from "../Keyword/apiKeyword";
 import {Autocomplete} from "@material-ui/lab";
 
 const styles = theme => ({
@@ -59,7 +59,7 @@ class AskQuestion extends Component {
     }
 
     loadKeywords = () => {
-        readAllKeywords().then(data => {
+        readAllKeywords2().then(data => {
             if (data.error) {
                 console.log(data.error);
             }
@@ -95,10 +95,11 @@ class AskQuestion extends Component {
             },
             "keywords": keywordsSelectedIds
         };
-        const question2 = JSON.stringify(question);
-        createQuestion(question2, token).then(data => {
+        //const question2 = JSON.stringify(question);
+        createQuestion2(question, token).then(data => {
             if(data.message === "Unauthorized" || data.message === "Bad Request"){
                 console.log(data.message);
+                console.log('hi');
             }
             else{
                 console.log('Your question is submitted correctly. Thank you.');

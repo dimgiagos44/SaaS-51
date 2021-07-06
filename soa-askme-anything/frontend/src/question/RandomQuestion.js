@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Card, CardActionArea, CardActions, CardContent, Grid, Typography, withStyles} from "@material-ui/core";
-import {readAll} from "./apiQuestion";
+import {readAll2} from "./apiQuestion";
 
 const styles = theme => ({
     root: {
@@ -76,7 +76,7 @@ class RandomQuestion extends Component {
     };
 
     loadQuestions = () => {
-        readAll().then(data => {
+        readAll2().then(data => {
             if (data.error) {
                 console.log(data.error);
             }

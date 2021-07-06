@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Button, Card, CardContent, Grid, TextField, Typography, withStyles} from "@material-ui/core";
-import {readQuestionsAfterDay, readQuestionsBeforeDay, readQuestionsCurrentDay} from "./apiQuestion";
+import {readQuestionsAfterDay2, readQuestionsBeforeDay2, readQuestionsCurrentDay2} from "./apiQuestion";
 
 const styles = theme => ({
     root: {
@@ -67,7 +67,8 @@ class QuestionPerPeriod extends Component {
         event.preventDefault();
         this.handleDateChange(this.state.selectedDateAfter);
         console.log(this.state.selectedDateAfter);
-        readQuestionsAfterDay(this.state.selectedDateAfter).then(data => {
+        readQuestionsAfterDay2(this.state.selectedDateAfter).then(data => {
+            console.log('data is ', data);
             if (data.error) {
                 console.log(data.error);
             }
@@ -93,7 +94,7 @@ class QuestionPerPeriod extends Component {
     clickButtonBefore = (event) => {
         event.preventDefault();
         this.handleDateChangeBefore(this.state.selectedDateBefore);
-        readQuestionsBeforeDay(this.state.selectedDateBefore).then(data => {
+        readQuestionsBeforeDay2(this.state.selectedDateBefore).then(data => {
             if (data.error) {
                 console.log(data.error);
             }
@@ -119,7 +120,7 @@ class QuestionPerPeriod extends Component {
     clickButtonCurrent = (event) => {
         event.preventDefault();
         this.handleDateChangeCurrent(this.state.selectedDateCurrent);
-        readQuestionsCurrentDay(this.state.selectedDateCurrent).then(data => {
+        readQuestionsCurrentDay2(this.state.selectedDateCurrent).then(data => {
             if (data.error) {
                 console.log(data.error);
             }

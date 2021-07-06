@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import {readAll, readQuestion} from './apiQuestion';
+import {readAll2, readQuestion2} from './apiQuestion';
 import {Button, Card, CardContent, MenuItem, TextField, Typography, withStyles} from "@material-ui/core";
-import {createAnswer, } from "../Answer/apiAnswer";
+import {createAnswer2, } from "../Answer/apiAnswer";
 import {isAuthenticated} from "../auth";
 
 const styles = theme => ({
@@ -80,7 +80,7 @@ class Question extends Component {
     };
 
     loadQuestions = () => {
-        readAll().then(data => {
+        readAll2().then(data => {
             if (data.error) {
                 console.log(data.error);
             }
@@ -93,7 +93,7 @@ class Question extends Component {
 
     handleQuestionPicked = (questionId) => {
         this.setState({ questionPicked: questionId });
-        readQuestion(questionId).then(data => {
+        readQuestion2(questionId).then(data => {
             if (data.error){
                 console.log(data.error);
             }
@@ -130,8 +130,8 @@ class Question extends Component {
                 "id": this.state.questionPicked
             }
         };
-        const answer2 = JSON.stringify(answer);
-        createAnswer(answer2, token).then(data => {
+        //const answer2 = JSON.stringify(answer);
+        createAnswer2(answer, token).then(data => {
             if(data.message === "Unauthorized"){
                 console.log(data.message);
             }

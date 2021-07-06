@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, withStyles} from "@material-ui/core";
-import {readQuestionByUserId} from "./apiQuestion";
+import {readQuestionByUserId2} from "./apiQuestion";
 
 
 const styles = theme => ({
@@ -44,7 +44,7 @@ class MyQuestion extends Component {
 
     loadMyQuestions = () => {
         const userId = localStorage.getItem('userId');
-        readQuestionByUserId(userId).then(data => {
+        readQuestionByUserId2(userId).then(data => {
             if (data.error){
                 console.log(data.error);
             }

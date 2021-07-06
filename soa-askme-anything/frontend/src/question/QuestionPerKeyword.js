@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Button, withStyles} from "@material-ui/core";
-import {readAllKeywords, readKeyword} from "../Keyword/apiKeyword";
+import {readAllKeywords2, readKeyword} from "../Keyword/apiKeyword";
 import {Bar, Pie} from 'react-chartjs-2';
 const styles = theme => ({
     root: {
@@ -51,7 +51,7 @@ class QuestionPerKeyword extends Component {
     }
 
     loadKeywords = () => {
-        readAllKeywords().then(data => {
+        readAllKeywords2().then(data => {
             if (data.error) {
                 console.log(data.error);
             }

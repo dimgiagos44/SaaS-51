@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {authenticate, login} from "../auth";
+import {authenticate, login2} from "../auth";
 import { Redirect } from "react-router-dom";
 import { withStyles, Grid, TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
@@ -69,7 +69,7 @@ class Login extends Component {
             username,
             password
         };
-        login(user).then(data => {
+        login2(user).then(data => {
             console.log('this is the response', data);
             if(data.message === "Unauthorized" || data.error === "Not Found") {
                 this.setState({ error: data.message, showWrongCredentials: true });

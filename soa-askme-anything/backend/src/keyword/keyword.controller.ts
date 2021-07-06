@@ -8,7 +8,7 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 export class KeywordController {
   constructor(private readonly keywordService: KeywordService) {}
 
-  @UseGuards(JwtAuthGuard)
+  //@UseGuards(JwtAuthGuard)
   @Post()
   create(@Body() createKeywordDto: CreateKeywordDto) {
     return this.keywordService.create(createKeywordDto);

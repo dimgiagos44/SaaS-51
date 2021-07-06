@@ -42,7 +42,6 @@ let KeywordController = class KeywordController {
     }
 };
 __decorate([
-    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Post(),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),

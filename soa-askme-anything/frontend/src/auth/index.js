@@ -1,4 +1,4 @@
-export const signup = user => {
+/* export const signup = user => {
     return fetch(`http://localhost:4001/signup`, {
         method: 'POST',
         headers: {
@@ -11,9 +11,51 @@ export const signup = user => {
             return response.json();
         })
         .catch(err => console.log(err));
+}; */
+
+export const signup2 = user => {
+    return fetch(`http://localhost:4200/bus`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "url": "signup",
+            "username": user.username,
+            "password": user.password,
+            "email": user.email,
+            "firstname": user.firstname,
+            "lastname": user.lastname
+            
+        })
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
 };
 
-export const login = user => {
+export const login2 = user => {
+    return fetch(`http://localhost:4200/bus`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "url": "login",
+            "username": user.username,
+            "password": user.password
+        })
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+/* export const login = user => {
     return fetch(`http://localhost:4001/login`, {
         method: 'POST',
         headers: {
@@ -28,7 +70,7 @@ export const login = user => {
         .catch(err => {
             console.log(err);
         });
-};
+}; */
 
 export const authenticate = (jwt, next) => {
     if (typeof window !== 'undefined') {

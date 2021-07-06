@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {signup} from "../auth";
+import {signup2} from "../auth";
 import { Link } from "react-router-dom";
 import {Button, Grid, TextField, withStyles} from "@material-ui/core";
 import Avatar from '@material-ui/core/Avatar';
@@ -60,7 +60,7 @@ class Signup extends Component {
             firstname,
             lastname
         };
-        signup(user).then(data => {
+        signup2(user).then(data => {
             console.log('this is the response for signup: ', data);
             if (data.message === "Internal server error") this.setState({ error: true });
             else {
