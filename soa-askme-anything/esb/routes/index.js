@@ -35,7 +35,7 @@ router.post('/bus', async(req, res) => {
   let currentMessages;
   let newMessage = {};
 
-  //get all message history from redis, clients can do the same
+  //get all message history from redis, clients can do the same..
   pool.hget('bus', 'messages', async(err, data) => {
       currentMessages = JSON.parse(data);
       newMessage = {
