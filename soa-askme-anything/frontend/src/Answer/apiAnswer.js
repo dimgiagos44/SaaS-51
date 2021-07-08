@@ -62,6 +62,25 @@ export const readAnswer2 = (answerId) => {
         .catch(err => console.log(err));
 };
 
+export const readAnswersByUserIdToday = (token, userId, chosenDay) => {
+    return fetch(`http://localhost:4200/bus`, {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json",
+        },
+        body: JSON.stringify({
+            "token": token,
+            "url": "readAnswersByUserIdToday",
+            "userId": userId,
+            "chosenDay": chosenDay
+        })
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
 /* export const readAnswerByUserId = (userId) => {
     return fetch(`http://localhost:4000/answer/user/${userId}`, {
         method: "GET"

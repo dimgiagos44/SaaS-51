@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Card, CardContent, Typography, withStyles} from "@material-ui/core";
-import {readUser} from "./apiUser";
+import {readUser2} from "./apiUser";
 
 const styles = theme => ({
     card: {
@@ -27,7 +27,7 @@ class MyAccount extends Component {
     loadMyInfo = () => {
         const userId = localStorage.getItem('userId');
         const token = localStorage.getItem('token');
-        readUser(userId, token).then(data => {
+        readUser2(userId, token).then(data => {
             this.setState({ user: data });
         });
     }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import {Card, CardActionArea, CardActions, MenuItem, CardContent, Grid, Typography, withStyles} from "@material-ui/core";
+import {Card, CardActionArea, CardActions, MenuItem, CardHeader, CardContent, Grid, Typography, withStyles} from "@material-ui/core";
 import { readQuestionsByUserIdToday } from "../question/apiQuestion";
+import { readAnswersByUserIdToday } from "../Answer/apiAnswer";
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -8,14 +9,14 @@ const styles = theme => ({
         height: 805,
     },
     first: {
-        width: 250,
+        width: 550,
         backgroundColor: "seashell",
         marginTop: 180,
         height: 350,
         marginLeft: 100,
     },
     second: {
-        width: 250,
+        width: 550,
         backgroundColor: "ivory",
         marginTop: 180,
         height: 350,
@@ -26,6 +27,9 @@ const styles = theme => ({
         height: 170,
         width: 150,
         marginLeft: 30
+    },
+    title: {
+        color: "red"
     }
 });
 
@@ -36,19 +40,21 @@ class Contributions extends Component {
         this.state = {
             myQuestions: [],
             myAnswers: [],
-            isLoaded: true
+            isLoaded: false
         };
     }
 
     handleMyQuestions = (myQuestions) => {
         console.log('myQ ', myQuestions)
-        this.setState({ myQuestions: myQuestions} );
+        this.setState({ myQuestions: myQuestions, isLoaded: true} );
     };
 
     loadMyQuestions = () => {
         const userId = localStorage.getItem('userId');
-        let today = new Date().toISOString().slice(0, 10)
-        readQuestionsByUserIdToday(userId, today).then(data => {
+        const today = new Date().toISOString().slice(0, 10);
+        console.log('user id = ', userId);
+        console.log('today = ', today);
+        readQuestionsByUserIdToday(Number(userId), today).then(data => {
             if (data.error) {
                 console.log(data.error);
             }
@@ -58,6 +64,32 @@ class Contributions extends Component {
             }
         })
     };
+
+    handleMyAnswers = (myAnswers) => {
+        this.setState({ myAnswers: myAnswers, isLoaded:true });
+    };
+
+    loadMyAnswers = () => {
+        const userId = localStorage.getItem('userId');
+        const token = localStorage.getItem('token');
+        const today = new Date().toISOString().slice(0, 10);
+        console.log('user id = ', userId);
+        console.log('today = ', today);
+        readAnswersByUserIdToday(token, Number(userId), today).then(data => {
+            if (data.error) {
+                console.log(data.error);
+            }
+            else{
+                console.log(data);
+                this.handleMyAnswers(data);
+            }
+        })
+    }
+
+    componentDidMount(){
+        this.loadMyQuestions();
+        this.loadMyAnswers();
+    }
 
 
 
@@ -72,10 +104,10 @@ class Contributions extends Component {
                         <Card className={classes.first}>
                             <CardActionArea>
                                 <CardContent>
+                                    <Typography variant="h5" className={classes.title}>Titles of mine today's questions</Typography>
                                         {this.state.myQuestions.map((question, i) => (
                                             <MenuItem value={question.id}>
-                                                <Typography variant="h6">{question.title}</Typography>
-                                                <Typography variant="h6">{question.text}</Typography>
+                                                <Typography variant="h6">{i+1}. {question.title}</Typography>
                                             </MenuItem>
                                         ))}
                                 </CardContent>
@@ -87,8 +119,13 @@ class Contributions extends Component {
                     <Grid item xs>
                         <Card className={classes.second}>
                             <CardActionArea>
-                                <CardContent>
-                                    
+                            <CardContent>
+                                    <Typography variant="h5" className={classes.title}>Answers of mine today's questions</Typography>
+                                        {this.state.myAnswers.map((answer, i) => (
+                                            <MenuItem value={answer.id}>
+                                                <Typography variant="h6">{i+1}. {answer.text}</Typography>
+                                            </MenuItem>
+                                        ))}
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>

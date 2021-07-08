@@ -126,7 +126,6 @@ router.post('/bus', (req, res) => {
             res.send(error.message);
         })
   }
-
   if(event.event.url === 'readQuestionsByUserIdToday'){
     axios.get('http://localhost:3001/question')
         .then(response => {
@@ -150,9 +149,47 @@ router.post('/bus', (req, res) => {
             res.send(error.message);
         })
   }
+  if(event.event.url === 'readAnswersByUserIdToday'){
+    let token = event.event.token;
+    let url = "token";
+    let body1 = JSON.stringify({"url": url, "token": token});
+    const headers = {'Content-Type': 'application/json',}
+    axios.post('http://localhost:4200/bus', body1, {headers: headers})
+        .then(response => {
+            if(response.data.status === 'token validated'){
+              axios.get('http://localhost:3001/answer')
+              .then(response => {
+                  let answers = response.data;
+                  const chosenDay = new Date(event.event.chosenDay);
+                  let userId = event.event.userId;
+                  let answersOfChosenDay = [];
+                  answers.forEach(answer => {
+                      let creationDate = answer.createdAt;
+                      const answerDay = new Date(creationDate.split('T')[0]);
+                      if (+answerDay === +chosenDay && userId === answer.user.id){
+                          answersOfChosenDay.push(answer);
+                      }
+                  });
+                  res.setHeader('Content-Type', 'application/json');
+                  res.send(answersOfChosenDay);
+              })
+              .catch(error => {
+                  res.setHeader('Content-Type', 'application/json');
+                  res.send(error.message);
+              })
+            }
+            else{
+                res.send({"status": "User not validated"});
+            }
+        })
+        .catch(error => {
+            res.setHeader('Content-Type', 'application/json');
+            res.send({"status": "user not validated"});
+        })
+  }
 })
  
-router.get('/keyword', function(req, res, next) {
+/* router.get('/keyword', function(req, res, next) {
   axios.get('http://localhost:3001/keyword')
       .then(response => {
         res.setHeader('Content-Type', 'application/json');
@@ -243,7 +280,7 @@ router.get('/question/currentday/:chosenDay', function (req, res, next){
             res.setHeader('Content-Type', 'application/json');
             res.send(error.message);
         })
-})
+}) */
 
 
 module.exports = router;

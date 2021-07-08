@@ -93,7 +93,7 @@ class Login extends Component {
 
     render() {
         const { classes, setShowHome } = this.props;
-        const {username, password, error, redirectToReferer} = this.state;
+        const { redirectToReferer } = this.state;
         if (redirectToReferer) {
             return <Redirect to="/" />;
         }

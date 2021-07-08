@@ -248,7 +248,7 @@ function verifyToken (req, res, next) {
 };
 
 
-//get all questions
+/* //get all questions
 router.get('/', function(req, res, next) {
     axios.get('http://localhost:3001/question')
         .then(response => {
@@ -311,7 +311,7 @@ router.post('/', verifyToken, function(req, res, next) {
         .catch(error => {
             res.send(error.message);
         })
-})
+}) */
 
 
 
