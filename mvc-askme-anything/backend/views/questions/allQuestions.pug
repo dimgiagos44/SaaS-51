@@ -1,0 +1,7 @@
+html
+    head
+        title='Pug - Questions index'
+    body
+        ul
+            each question in questions
+              li= question.title + ' ' + question.text

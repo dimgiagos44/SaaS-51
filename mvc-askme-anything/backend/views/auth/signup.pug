@@ -1,0 +1,35 @@
+html 
+    head 
+        title Sign up page
+    body 
+        div(class='topnav' style="background: green; height: 150")
+            a(style="color: white; margin-left: 20px; font-size: 24px") Welcome to ask me anything
+        form(class='form-login' method='POST' action='/auth/signup' style="height: 500px; margin-left: 600px; margin-top: 150px; background: green; margin-bot: 300px; width: 400px")
+            h3 Sign up here..and then log in
+            p 
+                | username: 
+                input(name='username', value='', type='text')
+                br 
+                br 
+                | password: 
+                input(name='password', value='', type='password')
+                br
+                br 
+                | email: 
+                input(name='email', value='', type='text')
+                br 
+                br 
+                | firstname: 
+                input(name='firstname', value='', type='text')
+                br 
+                br 
+                | lastname: 
+                input(name='lastname', value='', type='text')
+                br 
+                br 
+
+            - var buttonClass=['btn', 'btn-lg', 'btn-primary', 'btn-block'];
+
+        
+            
+            button(class=buttonClass style="margin-left: 80px; margin-top: 50px; font-size: 20px" type="submit") Sign up

@@ -1,0 +1,33 @@
+html 
+    head 
+        title Ask a question page
+    body 
+        div(class='topnav' style="background: green; height: 150")
+            a(style="color: white; margin-left: 20px; font-size: 24px") Welcome to ask me anything
+            a(style="color: white; margin-left: 20px; font-size: 24px" href="http://localhost:3001/home") Go to home 
+        form(class='form-ask-question' method='POST' action='/question' style="height: 500px; margin-left: 600px; margin-top: 150px; background: green; margin-bot: 300px; width: 400px")
+            h3 Enter your question here
+            p 
+                | title: 
+                input(name='title', value='', type='text')
+                br
+                br 
+                | text: 
+                input(name='text', value='', type='text')
+                br 
+                br 
+
+                |userId: 
+                input(name='userId', value=userId, type='text', readonly)
+                br 
+                br 
+
+                | keywords: 
+                br 
+                select#menu1(name='keywords', size=keywords.length, multiple='', style="margin-left: 50px")
+                    for keyword in keywords 
+                        option(value=keyword.id) #{keyword.text}
+
+            - var buttonClass=['btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            button(class=buttonClass style="margin-left: 80px; margin-top: 50px; font-size: 20px" type="submit") Ask question
+        

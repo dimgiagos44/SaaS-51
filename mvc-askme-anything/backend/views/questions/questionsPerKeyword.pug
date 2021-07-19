@@ -1,0 +1,31 @@
+html 
+    head
+        title='Questions per keyword'
+    body
+        div(class='topnav' style="background: green; height: 150")
+            a(style="color: white; margin-left: 20px; font-size: 24px") Welcome to ask me anything
+            a(class='button' href='http://localhost:3001/home' style="font-size:20px; color: white; margin-left: 550px; margin-right: 50px") Home
+            a(class='button' href='http://localhost:3001/auth/logout' style="font-size:20px; color: white; margin-left: 550px; margin-right: 50px") Log out
+
+
+        p #{Object.keys(dict)}
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js")
+        canvas#myChart(style='width:100%;max-width:700px') 
+        - var xValues = labels;
+        - var yValues = values;
+        script. 
+            
+            var barColors = ["red", "green","blue","orange","brown", "green", "blue", "black", "yellow"];
+
+            new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {}
+            });
+        

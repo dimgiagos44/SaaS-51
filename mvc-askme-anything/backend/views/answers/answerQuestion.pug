@@ -1,0 +1,26 @@
+html 
+    head 
+        title Answer a question page
+    body 
+        div(class='topnav' style="background: green; height: 150")
+            a(style="color: white; margin-left: 20px; font-size: 24px") Welcome to ask me anything
+            a(style="color: white; margin-left: 20px; font-size: 24px" href="http://localhost:3001/home") Go to home 
+        
+        form(class='form-answer-question' method='POST' action='/answer' style="height: 500px; margin-left: 600px; margin-top: 150px; background: green; margin-bot: 300px; width: 700px")
+            p(style="margin-left: 50px") Select question (title - text)
+            select#menu1(name='question', size=1, style="margin-left: 50px")
+                        for question in questions 
+                            option(value=question.id) #{question.title} - #{question.text}
+            br 
+            br 
+            p(style="margin-left: 50px") User id
+            input(name='userId', value=userId, type='text', readonly, style="margin-left: 50px")
+            br 
+            br
+            p(style="margin-left: 50px") Your answer here
+            input(name='text', value='', type='text', style="margin-left: 50px")
+            br 
+            br
+            - var buttonClass=['btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            button(class=buttonClass style="margin-left: 80px; margin-top: 50px; font-size: 20px" type="submit") Answer 
+        
