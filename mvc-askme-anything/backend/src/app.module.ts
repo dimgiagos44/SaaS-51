@@ -10,6 +10,7 @@ import { AnswerModule } from './answer/answer.module';
 import { KeywordModule } from './keyword/keyword.module';
 import { KeywordService } from './keyword/keyword.service';
 import { QuestionService } from './question/question.service';
+import { AnswerService } from './answer/answer.service';
 
 @Module({
   imports: [
@@ -22,6 +23,6 @@ import { QuestionService } from './question/question.service';
     KeywordModule,
   ],
   controllers: [AppController],
-  providers: [AppService, KeywordService, QuestionService],
+  providers: [AppService, KeywordService, QuestionService, AnswerService],
 })
 export class AppModule {}

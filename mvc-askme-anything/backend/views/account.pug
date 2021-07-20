@@ -5,28 +5,30 @@ html
         div(class='topnav' style="background: green; height: 150")
             a(style="color: white; margin-left: 20px; font-size: 24px") Welcome to ask me anything
             a(class='button' href='http://localhost:3001/home' style="font-size:20px; color: white; margin-left: 550px; margin-right: 50px") Home
-            a(class='button' href='http://localhost:3001/auth/logout' style="font-size:20px; color: white; margin-left: 550px; margin-right: 50px") Log out
+            a(class='button' href='http://localhost:3001/account' style="font-size:20px; color: white; margin-left: 50px; margin-right: 50px") Account
+            a(class='button' href='http://localhost:3001/auth/logout' style="font-size:20px; color: white; margin-left: 400px; margin-right: 50px") Log out
 
-        
-        .card(style="margin-left: 50px; float: left; width: 220; height: 300; background: yellow")
+        h2(style="margin-left: 550px") Account Page
+
+        .card(style="margin-left: 150px; margit-top: 100px; float: left; width: 220; height: 300; background: yellow")
             .card-block
             h2.card-title My questions and answers
             p.card-text ... 
-            a.card-actions(class='button' href='http://localhost:3001/questionsPerKeyword' style="color: black; margrin-left: 50px") Check
+            a.card-actions(class='button' href='http://localhost:3001/account/myQuestionsMyAnswers' style="color: black; margrin-left: 50px") Check
         
-        .card(style="margin-left: 50px; float: left; width: 220; height: 300; background: yellow")
+        .card(style="margin-left: 50px; margit-top: 100px; float: left; width: 220; height: 300; background: yellow")
             .card-block
             h2.card-title Contributions per day
             p.card-text ... 
-            a.card-actions(class='button' href='http://localhost:3001/questionsPerPeriod' style="color: black; margrin-left: 50px") Check
+            a.card-actions(class='button' href='http://localhost:3001/account/contributionsPerDay' style="color: black; margrin-left: 50px") Check
         
-        .card(style="margin-left: 50px; float: left; width: 220; height: 300; background: yellow")
+        .card(style="margin-left: 50px; margit-top: 100px; float: left; width: 220; height: 300; background: yellow")
             .card-block
             h2.card-title Ask a question 
             p.card-text ... 
             a.card-actions(class='button' href='http://localhost:3001/question/ask' style="color: black; margrin-left: 50px") Ask question
 
-        .card(style="margin-left: 50px; float: left; width: 220; height: 300; background: yellow")
+        .card(style="margin-left: 50px; margit-top: 100px; float: left; width: 220; height: 300; background: yellow")
             .card-block
             h2.card-title Answer a question
             p.card-text ... 

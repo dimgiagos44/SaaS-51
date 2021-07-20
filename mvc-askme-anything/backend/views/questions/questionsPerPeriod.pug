@@ -1,0 +1,33 @@
+html 
+    head
+        title='Questions per period'
+    body
+        div(class='topnav' style="background: green; height: 150")
+            a(style="color: white; margin-left: 20px; font-size: 24px") Welcome to ask me anything
+            a(class='button' href='http://localhost:3001/home' style="font-size:20px; color: white; margin-left: 550px; margin-right: 50px") Home
+            a(class='button' href='http://localhost:3001/account' style="font-size:20px; color: white; margin-left: 50px; margin-right: 50px") Account
+            a(class='button' href='http://localhost:3001/auth/logout' style="font-size:20px; color: white; margin-left: 400px; margin-right: 50px") Log out
+
+        
+        .card(style="margin-left: 50px; margin-top: 50px; float: left; width: 450; height: 600; background: pink")
+            .card-block
+            h2.card-title Questions of the last 7 days
+            p.card-text 
+            for question in last7Questions 
+                p #{question.text}
+        
+        .card(style="margin-left: 50px; margin-top: 50px; float: left; width: 450; height: 600; background: pink")
+            .card-block
+            h2.card-title Questions of the last 3 days
+            p.card-text 
+            for question in last3Questions 
+                p #{question.text}
+        
+        .card(style="margin-left: 50px; margin-top: 50px; float: left; width: 450; height: 600; background: pink")
+            .card-block
+            h2.card-title Questions of the last Month 
+            p.card-text 
+            for question in lastMonthQuestions 
+                p #{question.text}
+       
+        

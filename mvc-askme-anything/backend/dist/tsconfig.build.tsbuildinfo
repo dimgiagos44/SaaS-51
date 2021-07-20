@@ -1176,14 +1176,9 @@
         "signature": "95b5a3078fdc51508d5d9cde59a1dd9525b53fd42dc12265a55261fd415d3274",
         "affectsGlobalScope": false
       },
-      "../src/app.service.ts": {
-        "version": "509f6b0860c3cca0c4026a2986a5a98952f191b260633f67079803dbdd6534fe",
-        "signature": "d8f4cb0109c1b399d657807fd6af504d74a9300325e0fc915abdbf658b464a97",
-        "affectsGlobalScope": false
-      },
-      "../src/keyword/dto/create-keyword.dto.ts": {
-        "version": "19d911f01da568e507a9a86d975a7d9336ac3ab449174d03a0793b0021b4afd2",
-        "signature": "483d6b3c47f3d0d86f829f5c649548c715c16b3674f0bea71343728222fecf7c",
+      "../src/answer/dto/create-answer.dto.ts": {
+        "version": "0d0aa614ef1d2f44d6361f58788676022bdfe398f01da378c45a0caea79eb909",
+        "signature": "a7bb7456ee947e46458588cbe4e632034dcefc701a9517cc21749c95599ca73e",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts": {
@@ -1226,9 +1221,9 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
-      "../src/keyword/dto/update-keyword.dto.ts": {
-        "version": "3ae4cd262fdb9bed37525d063feb62319a1466c3f21460410f2f3d14fdbe3431",
-        "signature": "73de9c9ad42508f7d764a791273e81f0ab62166ebc886a1088f06734b19772f8",
+      "../src/answer/dto/update-answer.dto.ts": {
+        "version": "128bb7da894f25ac5b5a7f13b7a5d9bc5c5b59cad7ac68edb28674e017930675",
+        "signature": "3f7858c5edb5fabe15871b2e04f021291ae7e5487d4dd89557b71bd7807bfd4a",
         "affectsGlobalScope": false
       },
       "../node_modules/typeorm/schema-builder/options/tablecolumnoptions.d.ts": {
@@ -3066,14 +3061,14 @@
         "signature": "6c407a8b6e5cabde0c5e4ad2d1d0e18c4de012983e9a006fc5e3e121545552f1",
         "affectsGlobalScope": false
       },
-      "../src/answer/entities/answer.entity.ts": {
-        "version": "da7e08e7d3d14f17ca71118e7f966396c91926d9407000a5287fd0c25191450c",
-        "signature": "e51df2ada81018f644f2919be2aba8bce81e589e27eb173705d8f1786a120547",
-        "affectsGlobalScope": false
-      },
       "../src/user/entities/user.entity.ts": {
         "version": "fbd6528848f533c43778b0c1ac967bf3b817ae602b0f8d241b0cbff96fa7ea75",
         "signature": "5bcf1132c49996d7727fb3fbeb23ac04e7fdbfae6fed52935a08af8041b2c50f",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/entities/keyword.entity.ts": {
+        "version": "b9975f81fc4e835a65cfd4258a45d14653793cab322bbcbdbf3902d378f4a7d8",
+        "signature": "f3799bc88615a6eb2be15443b6fee771d9073d123cc5d1fd5d6ca559d5493072",
         "affectsGlobalScope": false
       },
       "../src/question/entities/question.entity.ts": {
@@ -3081,9 +3076,29 @@
         "signature": "f155cafaca8dcf2b831827d4728cc415e9a3d1d2162a6c4704e4accf8d3932a6",
         "affectsGlobalScope": false
       },
-      "../src/keyword/entities/keyword.entity.ts": {
-        "version": "b9975f81fc4e835a65cfd4258a45d14653793cab322bbcbdbf3902d378f4a7d8",
-        "signature": "f3799bc88615a6eb2be15443b6fee771d9073d123cc5d1fd5d6ca559d5493072",
+      "../src/answer/entities/answer.entity.ts": {
+        "version": "da7e08e7d3d14f17ca71118e7f966396c91926d9407000a5287fd0c25191450c",
+        "signature": "e51df2ada81018f644f2919be2aba8bce81e589e27eb173705d8f1786a120547",
+        "affectsGlobalScope": false
+      },
+      "../src/answer/answer.service.ts": {
+        "version": "98001b78b048eff9a736592fc8da99eb84b4622cc3b8ee4f68578cc677185b20",
+        "signature": "a86a79ba580824906b91b9607f44d73df92f631faac481bc7509c8d0fc8be81f",
+        "affectsGlobalScope": false
+      },
+      "../src/app.service.ts": {
+        "version": "509f6b0860c3cca0c4026a2986a5a98952f191b260633f67079803dbdd6534fe",
+        "signature": "d8f4cb0109c1b399d657807fd6af504d74a9300325e0fc915abdbf658b464a97",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/dto/create-keyword.dto.ts": {
+        "version": "19d911f01da568e507a9a86d975a7d9336ac3ab449174d03a0793b0021b4afd2",
+        "signature": "483d6b3c47f3d0d86f829f5c649548c715c16b3674f0bea71343728222fecf7c",
+        "affectsGlobalScope": false
+      },
+      "../src/keyword/dto/update-keyword.dto.ts": {
+        "version": "3ae4cd262fdb9bed37525d063feb62319a1466c3f21460410f2f3d14fdbe3431",
+        "signature": "73de9c9ad42508f7d764a791273e81f0ab62166ebc886a1088f06734b19772f8",
         "affectsGlobalScope": false
       },
       "../src/keyword/keyword.service.ts": {
@@ -3107,8 +3122,8 @@
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
-        "version": "cef799d33f943d0800e6674aedab8e5a6862450240c7fd5135c9b60a5b6e3045",
-        "signature": "001346e27282af547ab0547dfcf2a06590155b9d741b8ae5954b317570df5713",
+        "version": "68bf040e7c5e98e9ea1e4dac12f5bb43b114657193a932ed6662a79928a400bc",
+        "signature": "8cc2a86706cf0802c750ca46c86085a97c19ff6f12f6e16afdad67ecf00a07ee",
         "affectsGlobalScope": false
       },
       "../src/user/dto/create-user.dto.ts": {
@@ -3626,21 +3641,6 @@
         "signature": "1b867860095e230758cbe5acf3e680b526d348bbe7581eaac1b68464d115c003",
         "affectsGlobalScope": false
       },
-      "../src/answer/dto/create-answer.dto.ts": {
-        "version": "0d0aa614ef1d2f44d6361f58788676022bdfe398f01da378c45a0caea79eb909",
-        "signature": "a7bb7456ee947e46458588cbe4e632034dcefc701a9517cc21749c95599ca73e",
-        "affectsGlobalScope": false
-      },
-      "../src/answer/dto/update-answer.dto.ts": {
-        "version": "128bb7da894f25ac5b5a7f13b7a5d9bc5c5b59cad7ac68edb28674e017930675",
-        "signature": "3f7858c5edb5fabe15871b2e04f021291ae7e5487d4dd89557b71bd7807bfd4a",
-        "affectsGlobalScope": false
-      },
-      "../src/answer/answer.service.ts": {
-        "version": "98001b78b048eff9a736592fc8da99eb84b4622cc3b8ee4f68578cc677185b20",
-        "signature": "a86a79ba580824906b91b9607f44d73df92f631faac481bc7509c8d0fc8be81f",
-        "affectsGlobalScope": false
-      },
       "../src/answer/answer.controller.ts": {
         "version": "fd766a0840fb1a8ec03475e1b5962ef16c2238501cabde1c8f5bfb3d37e21e57",
         "signature": "3a8051c85cd1d6e004b73ff582b42ceb1e82a5641f52850b4e8d6306dfd6f6da",
@@ -3662,7 +3662,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "d928b08fa1948258784ff9bef1a55b6ca83fad559701f4561a60cb14b3ea3130",
+        "version": "f20a8736e5b0fb2fc4c9cced28a7a757857f973efe63888adf2cfc29f7c7b87c",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -6989,6 +6989,7 @@
       ],
       "../src/app.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../src/answer/answer.service.ts",
         "../src/app.service.ts",
         "../src/keyword/keyword.service.ts",
         "../src/question/question.service.ts"
@@ -6998,6 +6999,7 @@
         "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/answer/answer.module.ts",
+        "../src/answer/answer.service.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/auth/auth.module.ts",
@@ -10016,9 +10018,12 @@
         "../src/user/entities/user.entity.ts"
       ],
       "../src/app.controller.ts": [
+        "../src/answer/answer.service.ts",
+        "../src/answer/entities/answer.entity.ts",
         "../src/app.service.ts",
         "../src/keyword/entities/keyword.entity.ts",
         "../src/keyword/keyword.service.ts",
+        "../src/question/entities/question.entity.ts",
         "../src/question/question.service.ts"
       ],
       "../src/auth/auth.controller.ts": [

@@ -4,7 +4,9 @@ html
     body 
         div(class='topnav' style="background: green; height: 150")
             a(style="color: white; margin-left: 20px; font-size: 24px") Welcome to ask me anything
-            a(style="color: white; margin-left: 20px; font-size: 24px" href="http://localhost:3001/home") Go to home 
+            a(class='button' href='http://localhost:3001/home' style="font-size:20px; color: white; margin-left: 550px; margin-right: 50px") Home
+            a(class='button' href='http://localhost:3001/account' style="font-size:20px; color: white; margin-left: 50px; margin-right: 50px") Account
+            a(class='button' href='http://localhost:3001/auth/logout' style="font-size:20px; color: white; margin-left: 400px; margin-right: 50px") Log out
         form(class='form-ask-question' method='POST' action='/question' style="height: 500px; margin-left: 600px; margin-top: 150px; background: green; margin-bot: 300px; width: 400px")
             h3 Enter your question here
             p 
