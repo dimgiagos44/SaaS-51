@@ -4,7 +4,6 @@ import { CreateQuestionDto } from './dto/create-question.dto';
 import { UpdateQuestionDto } from './dto/update-question.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { KeywordService } from 'src/keyword/keyword.service';
-import { exception } from 'node:console';
 
 @Controller('question')
 export class QuestionController {
