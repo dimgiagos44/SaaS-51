@@ -11,6 +11,7 @@ import { KeywordModule } from './keyword/keyword.module';
 import { KeywordService } from './keyword/keyword.service';
 import { QuestionService } from './question/question.service';
 import { AnswerService } from './answer/answer.service';
+import { UserService } from './user/user.service';
 
 @Module({
   imports: [
@@ -23,6 +24,6 @@ import { AnswerService } from './answer/answer.service';
     KeywordModule,
   ],
   controllers: [AppController],
-  providers: [AppService, KeywordService, QuestionService, AnswerService],
+  providers: [AppService, KeywordService, QuestionService, AnswerService, UserService],
 })
 export class AppModule {}

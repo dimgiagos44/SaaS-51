@@ -3121,11 +3121,6 @@
         "signature": "2dd89a8420ef450f9876c89ed61237bebbbfb2400622fd8b941eee2ed82fcf7b",
         "affectsGlobalScope": false
       },
-      "../src/app.controller.ts": {
-        "version": "2dcaa1c6e9db38245081b7ffc75600a08326d0331b045211ff80d049a507d77b",
-        "signature": "9e6c991d6015e25460aee1ef89952e1f3def0eab36c7d5378e78ca77a20fb2fc",
-        "affectsGlobalScope": false
-      },
       "../src/user/dto/create-user.dto.ts": {
         "version": "5f0fc6a27e5a370e694bbb021801039c76a31688f9e94dad935b0e115a5c3e82",
         "signature": "87f679b9f19aa53041d89053aa85b13317f056cd90e0a7ca024436403b87e984",
@@ -3139,6 +3134,11 @@
       "../src/user/user.service.ts": {
         "version": "b4a187e539f2c9913ccf3a61ba54f9ca5874cec5b3195cc50c6ef6c1a757503f",
         "signature": "4a4069f3b9a7b9ea2525f89ca962afbf479fdbd7bf9d2bf3ea212f808027d3ef",
+        "affectsGlobalScope": false
+      },
+      "../src/app.controller.ts": {
+        "version": "3c1eebb30a57340948d9856b6f504b7decb247e21f38843aae36b24c17b68daf",
+        "signature": "ff9e3264541222edd41d32799660f56b522854a18187fd68cc9f088d0ec1fb93",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -3557,7 +3557,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.controller.ts": {
-        "version": "0a7a9935264b7ce2a737c1a83844fad7770fbb2414e4843bef5f254b60698f75",
+        "version": "5d8b49a51f5b2981b8bff29c0031a2ce144ba65fe0f929c533c0fe6f2689d3e8",
         "signature": "ed926008a944d0de6faca4ba4e3ec8765f15af80458ddfb2e68deb48b178eae6",
         "affectsGlobalScope": false
       },
@@ -3632,7 +3632,7 @@
         "affectsGlobalScope": false
       },
       "../src/question/question.controller.ts": {
-        "version": "6d9f6515d98582edb74d3c0daf6450ff91f23fdd5ecb9949d7e929b0e88c5f64",
+        "version": "621fc003fdc08a37f641fa2707c8e78f109a31f7ddb9985255d81811f623ad5a",
         "signature": "36147a92adc080da6a32522e1707e657d2d5e7fcbc0dcd779fe9da9d9d83222a",
         "affectsGlobalScope": false
       },
@@ -3662,7 +3662,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "c69d1c94271c55f3551560d7bddfe969c290693d82dc9163d1327a51e6730d03",
+        "version": "7bd4d42d7cba1affeac5a08cf511dde6336d049831f821b169b59df3b02c4b5d",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -6992,7 +6992,8 @@
         "../src/answer/answer.service.ts",
         "../src/app.service.ts",
         "../src/keyword/keyword.service.ts",
-        "../src/question/question.service.ts"
+        "../src/question/question.service.ts",
+        "../src/user/user.service.ts"
       ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -7007,7 +7008,8 @@
         "../src/keyword/keyword.service.ts",
         "../src/question/question.module.ts",
         "../src/question/question.service.ts",
-        "../src/user/user.module.ts"
+        "../src/user/user.module.ts",
+        "../src/user/user.service.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -7109,7 +7111,6 @@
       ],
       "../src/question/question.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/node/console.d.ts",
         "../src/auth/jwt-auth.guard.ts",
         "../src/keyword/keyword.service.ts",
         "../src/question/dto/create-question.dto.ts",
@@ -10024,7 +10025,9 @@
         "../src/keyword/entities/keyword.entity.ts",
         "../src/keyword/keyword.service.ts",
         "../src/question/entities/question.entity.ts",
-        "../src/question/question.service.ts"
+        "../src/question/question.service.ts",
+        "../src/user/entities/user.entity.ts",
+        "../src/user/user.service.ts"
       ],
       "../src/auth/auth.controller.ts": [
         "../src/auth/auth.service.ts",

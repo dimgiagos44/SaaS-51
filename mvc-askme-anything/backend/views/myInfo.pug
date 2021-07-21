@@ -1,0 +1,24 @@
+html 
+    head
+        title='Account page'
+    body
+        div(class='topnav' style="background: green; height: 150")
+            a(style="color: white; margin-left: 20px; font-size: 24px") Welcome to ask me anything
+            a(class='button' href='http://localhost:3001/home' style="font-size:20px; color: white; margin-left: 550px; margin-right: 50px") Home
+            a(class='button' href='http://localhost:3001/account' style="font-size:20px; color: white; margin-left: 50px; margin-right: 50px") Account
+            a(class='button' href='http://localhost:3001/auth/logout' style="font-size:20px; color: white; margin-left: 400px; margin-right: 50px") Log out
+        
+
+        .card(style="margin-left: 450px; margit-top: 100px; width: 500; height: 400; background: yellow")
+            .card-block
+            h2.card-title My info 
+            p.card-text  
+            a(style="color: black; margrin-left: 50px") Username: #{info.username}
+            br
+            a(style="color: black; margrin-left: 50px") Email: #{info.email}
+            br
+            a(style="color: black; margrin-left: 50px") Firstname: #{info.firstname}
+            br
+            a(style="color: black; margrin-left: 50px") Lastname: #{info.lastname}
+            br 
+            a(style="color: black; margrin-left: 50px") Password: #{password}

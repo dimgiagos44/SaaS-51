@@ -18,12 +18,14 @@ const answer_service_1 = require("./answer/answer.service");
 const app_service_1 = require("./app.service");
 const keyword_service_1 = require("./keyword/keyword.service");
 const question_service_1 = require("./question/question.service");
+const user_service_1 = require("./user/user.service");
 let AppController = class AppController {
-    constructor(appService, keywordService, questionService, answerService) {
+    constructor(appService, keywordService, questionService, answerService, userService) {
         this.appService = appService;
         this.keywordService = keywordService;
         this.questionService = questionService;
         this.answerService = answerService;
+        this.userService = userService;
     }
     getHello() {
         return this.appService.getHello();
@@ -112,6 +114,11 @@ let AppController = class AppController {
         });
         return { myQuestions: myQuestions, myAnswers: myAnswers };
     }
+    async myInfo(req) {
+        const userId = req.session.userId;
+        const info = await this.userService.findOne(userId);
+        return { info: info, password: req.session.password };
+    }
 };
 __decorate([
     common_1.Get(),
@@ -170,10 +177,18 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "contributionsPerDay", null);
+__decorate([
+    common_1.Get('/account/myInfo'),
+    common_1.Render('myInfo'),
+    __param(0, common_1.Request()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "myInfo", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService, keyword_service_1.KeywordService, question_service_1.QuestionService,
-        answer_service_1.AnswerService])
+        answer_service_1.AnswerService, user_service_1.UserService])
 ], AppController);
 exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

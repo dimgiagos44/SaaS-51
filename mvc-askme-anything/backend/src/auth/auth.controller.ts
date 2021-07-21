@@ -20,6 +20,7 @@ export class AuthController {
     }
     else{
       req.session.loggedIn = true;
+      req.session.password = req.body.password;
       req.session.userId = req.user.id;
       res.redirect('/home');
     }

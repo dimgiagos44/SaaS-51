@@ -20,6 +20,7 @@ const keyword_module_1 = require("./keyword/keyword.module");
 const keyword_service_1 = require("./keyword/keyword.service");
 const question_service_1 = require("./question/question.service");
 const answer_service_1 = require("./answer/answer.service");
+const user_service_1 = require("./user/user.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -34,7 +35,7 @@ AppModule = __decorate([
             keyword_module_1.KeywordModule,
         ],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService, keyword_service_1.KeywordService, question_service_1.QuestionService, answer_service_1.AnswerService],
+        providers: [app_service_1.AppService, keyword_service_1.KeywordService, question_service_1.QuestionService, answer_service_1.AnswerService, user_service_1.UserService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

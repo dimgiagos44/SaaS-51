@@ -3,11 +3,12 @@ import { AnswerService } from './answer/answer.service';
 import { AppService } from './app.service';
 import { KeywordService } from './keyword/keyword.service';
 import { QuestionService } from './question/question.service';
+import { UserService } from './user/user.service';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService, private readonly keywordService: KeywordService, private readonly questionService: QuestionService,
-    private readonly answerService: AnswerService) {}
+    private readonly answerService: AnswerService, private readonly userService: UserService) {}
 
   @Get()
   getHello(): string {
@@ -119,6 +120,15 @@ export class AppController {
       }
     });
     return {myQuestions: myQuestions, myAnswers: myAnswers};
+  }
+
+  @Get('/account/myInfo')
+  @Render('myInfo')
+  async myInfo(@Request() req) {
+    const userId = req.session.userId;
+    const info = await this.userService.findOne(userId);
+
+    return {info: info, password: req.session.password};
   }
 
 }
