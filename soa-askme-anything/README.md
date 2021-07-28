@@ -10,7 +10,7 @@ These are:
 5. [Authentication](https://github.com/dimgiagos44/SaaS-51/tree/master/soa-askme-anything/authentication)
 6. [QA_statistics](https://github.com/dimgiagos44/SaaS-51/tree/master/soa-askme-anything/qa_statistics)
 
-The **Frontend** communicates with the **Backend** services throught the **ESB**.
+The **Frontend** communicates with the **Backend** services through the **ESB**.
 
 * Frontend port: 3000
 * ESB port: 4200 
